@@ -43,8 +43,8 @@
     "tape": "^4.6.3"
   },
   "scripts": {
-    "start": "babel-node src/index.js",
-    "start:watch": "npm start -- --watch",
+    "postinstall": "gulp transpile",
+    "start": "node dist",
     "test": "gulp test",
     "test:watch": "npm test -- --watch"
   },
