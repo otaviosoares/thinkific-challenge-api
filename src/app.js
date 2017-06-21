@@ -16,7 +16,8 @@ import {createJwtStrategy} from './auth/auth.service'
 // lMmRxgvAenCVRJQV
 
 // Connect to MongoDB
-mongoose.connect('mongodb://thinkific:lMmRxgvAenCVRJQV@thinkific-integer-service-shard-00-00-s8xzc.mongodb.net:27017,thinkific-integer-service-shard-00-01-s8xzc.mongodb.net:27017,thinkific-integer-service-shard-00-02-s8xzc.mongodb.net:27017/thinkific-test?ssl=true', config.mongo.options)
+console.log(`try to connect at ${config.mongo.uri}`)
+mongoose.connect(config.mongo.uri, config.mongo.options)
 mongoose.connection.on('error', function (err) {
   console.error(`MongoDB connection error: ${err}`)
   process.exit(-1)
