@@ -3,7 +3,11 @@
 import Hapi from 'hapi'
 import mongoose from 'mongoose'
 import HapiJwt from 'hapi-auth-jwt2'
+import Inert from 'inert'
+import Vision from 'vision'
+import HapiSwagger from 'hapi-swagger'
 
+import Pack  from '../package'
 import config from './config/environment'
 import routes from './api/routes'
 import {createJwtStrategy} from './auth/auth.service'
@@ -22,14 +26,32 @@ const server = new Hapi.Server()
 server.connection({ port: config.port, host: 'localhost' })
 
 let plugins = [
-  HapiJwt
+  Inert,
+  Vision,
+  HapiJwt,
+  {
+    register: HapiSwagger,
+    options: {
+      info: {
+        title: 'Thinkific Integer Service API Documentation',
+        version: Pack.version
+      },
+      securityDefinitions: {
+        'jwt': {
+          'type': 'apiKey',
+          'name': 'Authorization',
+          'in': 'header'
+        }
+      },
+      security: [{ 'jwt': [] }]
+    }
+  }
 ]
 
 server.register(plugins, () => {
   createJwtStrategy(server)
   server.route(routes)
-
-  if (!module.parent) {
+  if (process.env !== 'TEST') {
     server.start((err) => {
       if (err) {
         throw err
