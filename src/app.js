@@ -24,7 +24,7 @@ mongoose.connection.on('error', function (err) {
 })
 
 const server = new Hapi.Server()
-server.connection({ port: config.port, host: 'localhost' })
+server.connection({ port: config.port })
 
 let plugins = [
   Inert,
