@@ -1,3 +1,4 @@
+import Joi from 'joi'
 import {create, next, getCurrent, replaceCurrent} from './user.controllers'
 
 const UserRoutes = [
@@ -6,7 +7,18 @@ const UserRoutes = [
     path: '/v1/user',
     handler: create,
     config: {
-      tags: ['api']
+      tags: ['api'],
+      validate: {
+        payload: {
+          email: Joi.string()
+            .email()
+            .required()
+            .description('the user email to be registered'),
+          password: Joi.string()
+            .required()
+            .description('the user password to be registered')
+        }
+      }
     }
   },
   {
@@ -33,7 +45,15 @@ const UserRoutes = [
     handler: replaceCurrent,
     config: {
       tags: ['api'],
-      auth: 'jwt'
+      auth: 'jwt',
+      validate: {
+        payload: {
+          integer: Joi.number()
+            .required()
+            .positive()
+            .description('the new integer')
+        }
+      }
     }
   }
 ]

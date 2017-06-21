@@ -138,6 +138,6 @@ test('PUT /v1/current should not allow a negative value', (t) => {
   }
   server.inject(options, function (res) {
     t.equal(res.statusCode, 400, 'response status should match')
-    t.equal(res.result.message, 'Integer must be positive a positive value.', 'error message should match')
+    t.equal(res.result.message, 'child "integer" fails because ["integer" must be a positive number]')
   })
 })

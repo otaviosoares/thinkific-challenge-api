@@ -6,8 +6,7 @@ import {signToken} from '../../auth/auth.service'
 
 function validationError (reply, statusCode) {
   return function (err) {
-    console.error(err)
-    return reply(err)
+    return reply(Boom.badRequest(err.message))
   }
 }
 
@@ -53,10 +52,6 @@ export function getCurrent (request, reply) {
  * Gets the current integer
  */
 export function replaceCurrent (request, reply) {
-  const payload = request.payload
-  if (payload.integer < 0) {
-    return reply(Boom.badRequest('Integer must be positive a positive value.'))
-  }
   let userId = request.auth.credentials._id
   User.findByIdAndUpdate(userId, { $set: { integer: request.payload.integer } }, {new: true}).exec()
     .then(user => {
