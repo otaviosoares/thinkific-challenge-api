@@ -16,6 +16,7 @@ import {createJwtStrategy} from './auth/auth.service'
 // lMmRxgvAenCVRJQV
 
 // Connect to MongoDB
+console.log(`try to connect at ${config.mongo.uri}`)
 mongoose.connect(config.mongo.uri, config.mongo.options)
 mongoose.connection.on('error', function (err) {
   console.error(`MongoDB connection error: ${err}`)

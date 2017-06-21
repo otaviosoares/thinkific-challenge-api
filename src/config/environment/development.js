@@ -3,7 +3,7 @@
 module.exports = {
 
   mongo: {
-    uri: 'mongodb://localhost/testnode-dev'
+    uri: 'mongodb://localhost/thinkific-test'
   },
 
   seedDB: true
