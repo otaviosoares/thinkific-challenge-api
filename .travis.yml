@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-    - 6.10
+- 6.1
 services:
-  - mongodb
+- mongodb
 before_script:
-  - sleep 15
+- sleep 15
 script:
-  - "npm test"
+- npm test
+deploy:
+  api_key:
+    secure: orq+byTNxVjsXjbOFWhNHITAehxIX/bGklitgXI2xkQtdUNy0QM6QnR8Ynm2iNfUyPPwaNYEE34Yw4nctyI1K3VLp3Ihm3Xk/7JU2NUsOgffbgsg6WhQ3W7FeNYD1tjvVH25b7IrFTYaRp4Tm2kahMLGbMKIzgEUfOuw/X8H93LAjMJTtC5IgAmRdY5CbhGlkzS74EeUMy4p5uiWyflBbRZfPBP2qylbPpqF3oTszH5SkNBLlJkWtjo5ajGp+AJkaW/jfASQpVCms2I2EAxlF81Px2jgEov9bTMNtbJM0pn2KJr7+/Yh77RiHhL07Vp5PguHuitk/Arg020MKkkKUr4f9ACeHEUp1H14AY8z/oNP7yMdaZaTQSvlzMZ50nluvHZuVCxdIAKiV9E8EFlVcUHYOvj2t9sPjUiIqJteZxrAE8EdhPl48Et0q/4X8wX8HAuURado5dzY2IjGI3HReziWqoVyS/XSCDdhyLUJ9j846jFDGTMzFhmSQOf8WAWMzzgICVTZQPZ5CSQsd4ld+pqnYMnOav4QGaHuFNj4lkjXVKDpGs1yuWTrlkcK4rE7Lg/yAgKcmsp/hsKfoWhToeiu9mNGTqSBaYIfx+mFzg2nyXAFtG03sTGUcCegTydakATCjGSM0DuKb/bTNcTMJIo5RcjVV/GLL+P5GTFMk28=
+  app: integer-as-a-service
