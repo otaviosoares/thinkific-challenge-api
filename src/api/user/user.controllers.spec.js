@@ -2,7 +2,6 @@ import test from 'tape'
 import sinon from 'sinon'
 import Promise from 'bluebird'
 import server from '../..'
-import config from '../../config/environment'
 import {signToken} from '../../auth/auth.service'
 import User from './user.model'
 

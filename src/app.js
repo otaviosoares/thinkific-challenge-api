@@ -7,7 +7,7 @@ import Inert from 'inert'
 import Vision from 'vision'
 import HapiSwagger from 'hapi-swagger'
 
-import Pack  from '../package'
+import Pack from '../package'
 import config from './config/environment'
 import routes from './api/routes'
 import {createJwtStrategy} from './auth/auth.service'
@@ -51,7 +51,7 @@ let plugins = [
 server.register(plugins, () => {
   createJwtStrategy(server)
   server.route(routes)
-  if (process.env !== 'TEST') {
+  if (process.env.NODE_ENV !== 'test') {
     server.start((err) => {
       if (err) {
         throw err

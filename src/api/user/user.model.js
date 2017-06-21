@@ -137,7 +137,6 @@ UserSchema.methods = {
    */
   authenticate (password, callback) {
     if (!callback) {
-      console.log('authenticate', password, this.password)
       return this.password === this.encryptPassword(password)
     }
 
