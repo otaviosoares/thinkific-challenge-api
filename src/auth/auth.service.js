@@ -33,7 +33,7 @@ export function signToken (id) {
  * Creates the Hapi JWT strategy
  */
 export function createJwtStrategy (server) {
-  server.auth.strategy('token', 'jwt', {
+  server.auth.strategy('jwt', 'jwt', {
     key: config.secrets.session,
     validateFunc: validateToken,
     verifyOptions: { algorithms: [ 'HS256' ] }

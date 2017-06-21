@@ -15,7 +15,7 @@ const UserRoutes = [
     handler: next,
     config: {
       tags: ['api'],
-      auth: 'token'
+      auth: 'jwt'
     }
   },
   {
@@ -24,7 +24,7 @@ const UserRoutes = [
     handler: getCurrent,
     config: {
       tags: ['api'],
-      auth: 'token'
+      auth: 'jwt'
     }
   },
   {
@@ -33,7 +33,7 @@ const UserRoutes = [
     handler: replaceCurrent,
     config: {
       tags: ['api'],
-      auth: 'token'
+      auth: 'jwt'
     }
   }
 ]
