@@ -22,7 +22,6 @@ export function local (request, reply) {
         return reply(Boom.unauthorized('Invalid credentials'))
       }
       user.authenticate(request.payload.password, function (err, authenticated) {
-        console.log('qq deu', err, authenticated)
         if (err) {
           return reply(Boom.internal(err))
         }
