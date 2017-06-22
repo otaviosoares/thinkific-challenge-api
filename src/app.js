@@ -29,7 +29,7 @@ server.connection({
     cors: {
       origin: [
         'http://localhost:3000',
-        'https://otaviosoares.github.io/thinkific-challenge-ui'
+        'https://otaviosoares.github.io'
       ]
     }
   }
