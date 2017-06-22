@@ -1,8 +1,8 @@
 'use strict'
 
 import jwt from 'jsonwebtoken'
-import config from '../config/environment'
-import User from '../api/user/user.model'
+import config from '../../config/environment'
+import User from '../user/user.model'
 
 /**
  * Attaches the user object to the request credentials if authenticated

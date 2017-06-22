@@ -2,7 +2,7 @@
 
 import User from './user.model'
 import Boom from 'boom'
-import {signToken} from '../../auth/auth.service'
+import {signToken} from '../auth/auth.service'
 
 function validationError (reply, statusCode) {
   return function (err) {

@@ -2,7 +2,7 @@ import test from 'tape'
 import sinon from 'sinon'
 
 import {validateToken} from './auth.service'
-import User from '../api/user/user.model'
+import User from '../user/user.model'
 
 require('sinon-mongoose')
 

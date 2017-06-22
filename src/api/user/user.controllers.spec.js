@@ -2,7 +2,7 @@ import test from 'tape'
 import sinon from 'sinon'
 import Promise from 'bluebird'
 import server from '../..'
-import {signToken} from '../../auth/auth.service'
+import {signToken} from '../auth/auth.service'
 import User from './user.model'
 
 test('POST /v1/user should save an user and return a jwt token of the id', (t) => {

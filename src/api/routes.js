@@ -1,2 +1,3 @@
 import user from './user'
-export default [].concat(user)
+import auth from './auth'
+export default auth.concat(user)

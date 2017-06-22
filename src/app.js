@@ -10,13 +10,12 @@ import HapiSwagger from 'hapi-swagger'
 import Pack from '../package'
 import config from './config/environment'
 import routes from './api/routes'
-import {createJwtStrategy} from './auth/auth.service'
+import {createJwtStrategy} from './api/auth/auth.service'
 
 // thinkific
 // lMmRxgvAenCVRJQV
 
 // Connect to MongoDB
-console.log(`try to connect at ${config.mongo.uri}`)
 mongoose.connect(config.mongo.uri, config.mongo.options)
 mongoose.connection.on('error', function (err) {
   console.error(`MongoDB connection error: ${err}`)
@@ -24,7 +23,17 @@ mongoose.connection.on('error', function (err) {
 })
 
 const server = new Hapi.Server()
-server.connection({ port: config.port })
+server.connection({
+  port: config.port,
+  routes: {
+    cors: {
+      origin: [
+        'http://localhost:3000',
+        'https://otaviosoares.github.io/thinkific-challenge-ui'
+      ]
+    }
+  }
+})
 
 let plugins = [
   Inert,
