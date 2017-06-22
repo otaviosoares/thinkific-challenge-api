@@ -13,7 +13,7 @@
 * Node 6+
 * MongoDB running locally or just ```docker run -d -p 27017:27017 --name mongo_instance mongo```
 
-# Running
+# Running locally
 ```sh
 $ cd thinkific-challenge-api
 $ npm install
@@ -21,6 +21,8 @@ $ npm start
 ```
 
 # Endpoints
+
+If you want to test locally, just replace https://integer-as-a-service.herokuapp.com by http://localhost:9000
 
 ### - Register
 ```
