@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/otaviosoares/thinkific-challenge-api.svg?branch=master)](https://travis-ci.org/otaviosoares/thinkific-challenge-api)
 
 # Documentation
-
-* [Swagger][DOCS]
+* Base URL: https://integer-as-a-service.herokuapp.com
+* [Documentation][DOCS]
 
 # Dependencies
 
