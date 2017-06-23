@@ -29,7 +29,7 @@ export function local (request, reply) {
           return reply(Boom.unauthorized('Invalid credentials'))
         } else {
           var token = signToken(user._id)
-          reply({ token }).code(201)
+          reply({ token }).code(200)
         }
       })
     })
